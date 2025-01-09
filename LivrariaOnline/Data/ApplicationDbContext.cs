@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using LivrariaOnline.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LivrariaOnline.Data
@@ -9,5 +10,7 @@ namespace LivrariaOnline.Data
             : base(options)
         {
         }
+
+        public DbSet<Book> Books { get; set; }
     }
 }
