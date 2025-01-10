@@ -1,4 +1,5 @@
 services:
+  # The container for the Web Application
   livrariaonline:
     image: ${DOCKER_REGISTRY-}livrariaonline
     build:
@@ -6,6 +7,7 @@ services:
       dockerfile: LivrariaOnline/Dockerfile
     depends_on:
         - SqlServerDB
+  # The container for the database
   SqlServerDB:
     container_name: SqlServerContainer
     image: mcr.microsoft.com/mssql/server:latest

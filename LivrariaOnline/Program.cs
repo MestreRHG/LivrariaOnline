@@ -10,12 +10,13 @@ namespace LivrariaOnline
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Connect to the database
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+            // Add Identity
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
@@ -41,11 +42,13 @@ namespace LivrariaOnline
 
             app.UseAuthorization();
 
+            // Map the Home/Index to be the default route
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
+            // Migrate database on startup
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
