@@ -1,0 +1,16 @@
+services:
+  livrariaonline:
+    image: ${DOCKER_REGISTRY-}livrariaonline
+    build:
+      context: .
+      dockerfile: LivrariaOnline/Dockerfile
+    depends_on:
+        - SqlServerDB
+  SqlServerDB:
+    container_name: SqlServerContainer
+    image: mcr.microsoft.com/mssql/server:latest
+    ports:
+        - "8002:1433"
+    environment:
+        - "ACCEPT_EULA=Y"
+        - "MSSQL_SA_PASSWORD=LivrariaXPTO123"

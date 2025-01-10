@@ -1,18 +1,21 @@
-﻿namespace LivrariaOnline.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LivrariaOnline.Models
 {
     public class Book
     {
+        [Key]
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
+        public required string Title { get; set; }
+        public required string Author { get; set; }
         public int Year { get; set; }
-        public string Genre { get; set; }
-        public string Publisher { get; set; }
-        public string ISBN { get; set; }
-        public string Language { get; set; }
+        public required string Genre { get; set; }
+        public required string Publisher { get; set; }
+        public required string ISBN { get; set; }
+        public required string Language { get; set; }
         public int Pages { get; set; }
-        public string Description { get; set; }
-        public string CoverImage { get; set; }
+        public required string Description { get; set; }
+        public required string CoverImage { get; set; }
         public decimal Price { get; set; }
     }
 }
