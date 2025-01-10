@@ -12,5 +12,6 @@ namespace LivrariaOnline.Data
         }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Deliveries> Deliveries { get; set; }
     }
 }

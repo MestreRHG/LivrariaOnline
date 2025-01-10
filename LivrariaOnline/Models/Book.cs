@@ -15,16 +15,9 @@ namespace LivrariaOnline.Models
         [StringLength(100, ErrorMessage = "Author cannot exceed 100 characters")]
         public required string Author { get; set; }
 
-        [Required(ErrorMessage = "Year is required")]
-        public int Year { get; set; }
-
         [Required(ErrorMessage = "Genre is required")]
         [StringLength(50, ErrorMessage = "Genre cannot exceed 50 characters")]
         public required string Genre { get; set; }
-
-        [Required(ErrorMessage = "Publisher is required")]
-        [StringLength(50, ErrorMessage = "Publisher cannot exceed 50 characters")]
-        public required string Publisher { get; set; }
 
         [Required(ErrorMessage = "ISBN is required")]
         public required string ISBN { get; set; }
@@ -32,9 +25,6 @@ namespace LivrariaOnline.Models
         [Required(ErrorMessage = "Language is required")]
         [StringLength(50, ErrorMessage = "Language cannot exceed 50 characters")]
         public required string Language { get; set; }
-
-        [Required(ErrorMessage = "Pages is required")]
-        public int Pages { get; set; }
 
         [Required(ErrorMessage = "Description is required")]
         [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters")]
