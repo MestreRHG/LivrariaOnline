@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: LivrariaOnline/Dockerfile
+    environment:
+          - ConnectionStrings__DefaultConnection=Server=SqlServerContainer;Database=LivrariaOnline;User Id=sa;Password=LivrariaXPTO123;Trust Server Certificate=True;
     depends_on:
         - SqlServerDB
   # The container for the database
@@ -16,3 +18,9 @@ services:
     environment:
         - "ACCEPT_EULA=Y"
         - "MSSQL_SA_PASSWORD=LivrariaXPTO123"
+    volumes:
+      - dbVolume:/var/opt/mssql
+
+volumes:
+  dbVolume:
+      
