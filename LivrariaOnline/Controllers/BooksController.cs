@@ -14,9 +14,9 @@ public class BooksController : Controller
         _context = context;
     }
 
-    public IActionResult Details(int id)
+    public IActionResult BookDetails(int id)
 	{
-		var book = _context.Books.First(l => l.Id == id);
+		var book = _context.Books.FirstOrDefault(l => l.Id == id);
 		if (book == null)
 		{
             ViewData["Title"] = "Create a Book";
