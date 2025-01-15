@@ -15,26 +15,27 @@ public class BooksController : Controller
         _context = context;
     }
 
-    public IActionResult BookDetails(int id)
+    public IActionResult Edit(int id)
 	{
 		var book = _context.Books.FirstOrDefault(l => l.Id == id);
 
         ViewData["Title"] = "Edit a Book";
-        return View(book);
+        return View("BookDetails", book);
 	}
 
     // Function to save or edit the book
     [HttpPost]
-    public IActionResult BookDetails(Book book)
+    public IActionResult Edit(Book book)
     {
         if (ModelState.IsValid)
         {
             _context.Books.Update(book);
-
             _context.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
         }
 
-        return RedirectToAction("Index", "Home");
+        return View("BookDetails", book);
     }
 
     public IActionResult Create()
@@ -47,8 +48,24 @@ public class BooksController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Create(Book book)
     {
+        if (ModelState.IsValid)
+        {
+            _context.Books.Add(book);
+            _context.SaveChanges();
 
-        throw new Exception("Not implemented");
+            return RedirectToAction("Index", "Home");
+        }
+
+        // Log the model state errors to the console
+        foreach (var state in ModelState)
+        {
+            foreach (var error in state.Value.Errors)
+            {
+                _logger.LogError($"Property: {state.Key}, Error: {error.ErrorMessage}");
+            }
+        }
+
+        return View("BookDetails", book);
     }
 
 }

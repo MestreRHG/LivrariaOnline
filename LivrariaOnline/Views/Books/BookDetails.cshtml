@@ -3,10 +3,9 @@
 <div class="text-center">
 	<h2>Book Details</h2>
 
-    @using (Html.BeginForm("BookDetails", "Books", FormMethod.Post))
+    @using (Html.BeginForm(FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        <input type="hidden" asp-for="@Model.Id" />
 
         <div class="form-horizontal">
             <h4>Book Details</h4>
@@ -64,7 +63,6 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.CoverImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @* <input type="file" id="CoverImage" name="CoverImage" class="form-control" /> *@
                     @Html.EditorFor(model => model.CoverImageUrl, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.CoverImageUrl, "", new { @class = "text-danger" })
                 </div>
