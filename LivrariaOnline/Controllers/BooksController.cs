@@ -68,5 +68,14 @@ public class BooksController : Controller
         return View("BookDetails", book);
     }
 
+	public IActionResult Delete(int id)
+    {
+		var book = _context.Books.FirstOrDefault(l => l.Id == id);
+
+        if (book != null)
+            _context.Books.Remove(book);
+
+		return RedirectToAction("Index", "Home");
+    }
 }
 
