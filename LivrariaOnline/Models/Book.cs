@@ -31,9 +31,9 @@ namespace LivrariaOnline.Models
         public required string Description { get; set; }
 
         [Required(ErrorMessage = "Cover Image is required")]
-        public required byte[] CoverImage { get; set; }
+        public required string CoverImageUrl { get; set; }
 
         [Required(ErrorMessage = "Price is required")]
-        public decimal Price { get; set; }
+        public string Price { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using LivrariaOnline.Data;
 using LivrariaOnline.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 public class BooksController : Controller
 {
@@ -17,11 +18,6 @@ public class BooksController : Controller
     public IActionResult BookDetails(int id)
 	{
 		var book = _context.Books.FirstOrDefault(l => l.Id == id);
-		if (book == null)
-		{
-            ViewData["Title"] = "Create a Book";
-            return View();
-		}
 
         ViewData["Title"] = "Edit a Book";
         return View(book);
@@ -29,21 +25,30 @@ public class BooksController : Controller
 
     // Function to save or edit the book
     [HttpPost]
-    public IActionResult Save(Book book)
+    public IActionResult BookDetails(Book book)
     {
-        var bookInDb = _context.Books.First(l => l.Id == book.Id);
+        if (ModelState.IsValid)
+        {
+            _context.Books.Update(book);
 
-        if (bookInDb == null)
-        {
-            _context.Books.Add(book);
-        }
-        else
-        {
-            bookInDb = book;
+            _context.SaveChanges();
         }
 
-        _context.SaveChanges();
         return RedirectToAction("Index", "Home");
+    }
+
+    public IActionResult Create()
+    {
+        ViewData["Title"] = "Create a Book";
+        return View("BookDetails");
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Create(Book book)
+    {
+
+        throw new Exception("Not implemented");
     }
 
 }
