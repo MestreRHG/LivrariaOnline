@@ -1,9 +1,12 @@
 ﻿using LivrariaOnline.Controllers;
 using LivrariaOnline.Data;
 using LivrariaOnline.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
+
+[Authorize]
 public class BooksController : Controller
 {
     private readonly ILogger<BooksController> _logger;
