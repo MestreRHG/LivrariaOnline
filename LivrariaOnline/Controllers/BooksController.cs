@@ -20,7 +20,7 @@ public class BooksController : Controller
 		var book = _context.Books.FirstOrDefault(l => l.Id == id);
 
         ViewData["Title"] = "Edit a Book";
-        return View("BookDetails", book);
+        return View("BookEdit", book);
 	}
 
     // Function to save or edit the book
@@ -35,13 +35,13 @@ public class BooksController : Controller
             return RedirectToAction("Index", "Home");
         }
 
-        return View("BookDetails", book);
+        return View("BookEdit", book);
     }
 
     public IActionResult Create()
     {
         ViewData["Title"] = "Create a Book";
-        return View("BookDetails");
+        return View("BookEdit");
     }
 
     [HttpPost]
@@ -65,7 +65,7 @@ public class BooksController : Controller
             }
         }
 
-        return View("BookDetails", book);
+        return View("BookEdit", book);
     }
 
 	public IActionResult Delete(int id)

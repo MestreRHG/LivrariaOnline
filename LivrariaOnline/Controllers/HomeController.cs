@@ -31,6 +31,13 @@ namespace LivrariaOnline.Controllers
             return View(model);
         }
 
+        public IActionResult BookDetails(int id)
+        {
+            var book = _context.Books.FirstOrDefault(b => b.Id == id);
+
+            return View(book);
+        }
+
         public IActionResult Privacy()
         {
             return View();
