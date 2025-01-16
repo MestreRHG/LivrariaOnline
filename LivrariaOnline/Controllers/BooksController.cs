@@ -23,7 +23,7 @@ public class BooksController : Controller
     {
         var books = _context.Books.AsQueryable();
 
-        var Backoffice = new BackofficeViewModel
+		var Backoffice = new BackofficeViewModel
         {
             Books = books.ToList(),
         };
@@ -48,7 +48,7 @@ public class BooksController : Controller
             _context.Books.Update(book);
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Backoffice");
         }
 
         return View("BookEdit", book);
@@ -69,7 +69,7 @@ public class BooksController : Controller
             _context.Books.Add(book);
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Backoffice");
         }
 
         // Log the model state errors to the console
@@ -88,10 +88,12 @@ public class BooksController : Controller
     {
 		var book = _context.Books.FirstOrDefault(l => l.Id == id);
 
-        if (book != null)
+        if (book != null) { 
             _context.Books.Remove(book);
+            _context.SaveChanges();
+        }
 
-		return RedirectToAction("Index", "Home");
+		return RedirectToAction("Backoffice");
     }
 }
 

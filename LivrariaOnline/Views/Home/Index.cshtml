@@ -20,10 +20,10 @@
 </header>
 
 <body>
-	<div class="card-group">
+	<div class="card-group grid-container">
 		@foreach (Book book in Model.Books)
 		{
-			<div class="card BookCard" style="border: 1px solid rgba(0,0,0,.125)">
+				<div class="card BookCard grid-item" style="border: 1px solid rgba(0,0,0,.125)">
 				<img src="@book.CoverImageUrl"
 					 class="card-img-top bookCover">
 
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<small class="text-body-secondary" style="align-self: flex-start">@book.Price</small>
+						<small class="text-body-secondary" style="align-self: flex-start">@book.Price &euro;</small>
 				</div>
 			</div>
 		}

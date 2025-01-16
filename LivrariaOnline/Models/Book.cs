@@ -30,9 +30,15 @@ namespace LivrariaOnline.Models
         [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters")]
         public required string Description { get; set; }
 
-        public string CoverImageUrl { get; set; }
+        [DataType(DataType.ImageUrl, ErrorMessage = "Should be an URL to the image")]
+        public string? CoverImageUrl { get; set; }
 
-        [Required(ErrorMessage = "Price is required")]
+        [Required(ErrorMessage = "The price is required.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "The price must be greater than zero.")]
+        [DisplayFormat(DataFormatString = "{0:F2}", ApplyFormatInEditMode = true)]
         public string Price { get; set; }
+
+        [Required]
+        public required bool IsAvailable { get; set; }
     }
 }

@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 16rem;
 }
 
 .bookCover {
@@ -32,8 +32,8 @@ body {
 }
 
 .BookCard {
-    max-width: 30%;
-    margin: 2rem;
+    /*max-width: 30%;*/
+    /*margin: 2rem;*/
 }
 
 .BookButtons {
@@ -43,4 +43,17 @@ body {
 
 .BookButton {
     border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15%; /* Space between items */
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
