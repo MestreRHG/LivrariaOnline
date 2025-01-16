@@ -6,10 +6,18 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div class="row">
-    <div class="col-md-4">
+@* <ul class="list-group list-group-flush">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+</ul> *@
+
+<div class="maindivregister">
+    <div class="col-md-4" id="registercss">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
+            <h2>Create account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
@@ -56,3 +64,15 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
+@* @section Styles {
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .row{
+            text-align: center;
+        }
+    </style> *@
+
