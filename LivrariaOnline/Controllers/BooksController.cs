@@ -1,6 +1,7 @@
 ﻿using LivrariaOnline.Controllers;
 using LivrariaOnline.Data;
 using LivrariaOnline.Models;
+using LivrariaOnline.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -16,6 +17,18 @@ public class BooksController : Controller
     {
         _logger = logger;
         _context = context;
+    }
+
+    public IActionResult Backoffice()
+    {
+        var books = _context.Books.AsQueryable();
+
+        var Backoffice = new BackofficeViewModel
+        {
+            Books = books.ToList(),
+        };
+
+        return View(Backoffice);
     }
 
     public IActionResult Edit(int id)
