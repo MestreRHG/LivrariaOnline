@@ -17,8 +17,12 @@ html {
   min-height: 100%;
 }
 
+#mainsectioncss{
+    
+}
+
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .bookCover {
