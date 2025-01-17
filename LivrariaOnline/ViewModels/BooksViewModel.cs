@@ -2,7 +2,7 @@
 
 namespace LivrariaOnline.ViewModels
 {
-	public class BackofficeViewModel
+	public class BooksViewModel
 	{
 		public List<Book> Books { get; set; }
 	}

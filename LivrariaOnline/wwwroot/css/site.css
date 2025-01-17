@@ -32,8 +32,7 @@ body {
 }
 
 .BookCard {
-    /*max-width: 30%;*/
-    /*margin: 2rem;*/
+    max-width: 15rem;
 }
 
 .BookButtons {
@@ -45,15 +44,16 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15%; /* Space between items */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin: 2rem 7rem 0 7rem;
 }
 
-.grid-item {
-    background-color: #f0f0f0;
+.flex-item {
+    flex: 1 1 calc(33.333% - 32px); /* 3 items per row, minus the gap */
+    box-sizing: border-box;
     text-align: center;
-    border: 1px solid #ddd;
     border-radius: 8px;
 }

@@ -24,7 +24,7 @@ namespace LivrariaOnline.Controllers
             var books = _context.Books.AsQueryable();
             IndexViewModel model = new IndexViewModel
             {
-                Books = books.ToList(),
+                Books = books.Where(b => b.IsAvailable).ToList(),
                 Search = search ?? String.Empty
             };
 

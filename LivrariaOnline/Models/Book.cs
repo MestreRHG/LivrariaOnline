@@ -39,6 +39,6 @@ namespace LivrariaOnline.Models
         public string Price { get; set; }
 
         [Required]
-        public required bool IsAvailable { get; set; }
+        public required bool IsAvailable { get; set; } = true;
     }
 }

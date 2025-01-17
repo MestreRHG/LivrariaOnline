@@ -19,16 +19,21 @@ public class BooksController : Controller
         _context = context;
     }
 
-    public IActionResult Backoffice()
+    public IActionResult Books()
     {
         var books = _context.Books.AsQueryable();
 
-		var Backoffice = new BackofficeViewModel
+		var booksViewModel = new BooksViewModel
         {
             Books = books.ToList(),
         };
 
-        return View(Backoffice);
+        return View(booksViewModel);
+    }
+
+    public IActionResult Backoffice()
+    {
+        return View();
     }
 
     public IActionResult Edit(int id)
