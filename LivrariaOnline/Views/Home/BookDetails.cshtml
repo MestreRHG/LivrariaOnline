@@ -10,12 +10,14 @@
         <img src="@Model.CoverImageUrl" class="img-responsive" style="max-width: 14rem;" />
     </div>
     <div class="col-md-8">
-        <h3>@Model.Title</h3>
+        <h3>@Model.Id - @Model.Title</h3>
         <h4>@Model.Author</h4>
+        <h4>@Model.Editor</h4>
         <h4>@Model.Genre</h4>
         <h4>@Model.ISBN</h4>
         <h4>@Model.Language</h4>
         <p>@Model.Description</p>
+        <p>@Model.Dimensions</p>
         <p>@Model.Price &euro;</p>
         <br />
         <a class="btn BookButton" asp-area="" asp-controller="Books" asp-action="CreateDelivery">Buy</a>
