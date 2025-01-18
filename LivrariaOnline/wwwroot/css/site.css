@@ -26,8 +26,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
-    border: 2px solid rgba(64, 64, 64, 0.3); /* Define os limites */
+    height: 70vh;
+    width: 350vh;
+}
+
+#registercss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #registertitle {
