@@ -12,5 +12,11 @@ namespace LivrariaOnline.ViewModels
 
         [Required(ErrorMessage = "Address is required")]
         public string? Address { get; set; }
+
+
+        public string? BookCover { get; set; }
+
+        public string? BookTitle { get; set; }
+        public decimal? BookPrice { get; set; }
     }
 }
