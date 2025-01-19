@@ -21,6 +21,43 @@ body {
   margin-bottom: 16rem;
 }
 
+/* inicio do css que diz respeito a parte do register */
+.maindivregister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 350vh;
+}
+
+#registercss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#registertitle {
+    font-family: 'Georgia', serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* fim do css que diz respeito a parte do register */
+
+/* inicio do css que diz respeito a parte do login */
+.maindivlogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding-left: 33%;
+}
+/* fim do css que diz respeito a parte do login */
+
+.col-md-8 {
+    line-height: 10px;
+}
+
 .bookCover {
     width: 100%;
     max-width: 150px;
