@@ -12,11 +12,11 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Book Title</th>
+				<th scope="col">Book's Cover</th>
+                <th scope="col">Book's Title</th>
                 <th scope="col">Username</th>
                 <th scope="col">Address</th>
                 <th scope="col">Arrived</th>
-                @* <th scope="col" colspan="2">Options</th> *@
             </tr>
         </thead>
         <tbody>
@@ -24,14 +24,13 @@
             {
                 <tr>
                     <th scope="row">@delivery.Id</th>
+                    <td><img style="max-height: 3rem;" src="@delivery.BookBought.CoverImageUrl" /></td>
                     <td>@delivery.BookBought.Title</td>
                     <td>@delivery.UserName</td>
                     <td>@delivery.Address</td>
                     <td>
                         <input type="checkbox" @(delivery.HasArrived ? "checked" : "") onchange="updateDeliveryStatus (@delivery.Id, this)" />
                     </td>
-                    @* <td><a class="btn BookButton" asp-controller="Books" asp-action="Edit" asp-route-id="@delivery.Id">Edit</a></td>
-                    <td><a class="btn BookButton" asp-controller="Books" asp-action="Delete" asp-route-id="@delivery.Id">Delete</a></td> *@
                 </tr>
             }
         </tbody>
