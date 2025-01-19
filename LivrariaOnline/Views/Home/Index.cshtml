@@ -7,38 +7,46 @@
 	<h2>Welcome to Livraria Online</h2>
 </div>
 
-<header>
-	<nav class="navbar bg-body-tertiary">
-		<div class="container-fluid">
-			@* <a class="navbar-brand btn BookButton" asp-area="" asp-controller="Books" asp-action="Create">Create a new book</a> *@
-			<form class="d-flex" role="search">
-				<input class="form-control me-2" type="search" value="@Model.Search" placeholder="Search" aria-label="Search" name="Search">
-				<button class="btn btn-outline-success" value="Search" type="submit">Search</button>
-			</form>
-		</div>
-	</nav>
-</header>
+<section id="sectionindexcss">
+	<header>
+		<nav class="navbar bg-body-tertiary">
+			<div class="container-fluid">
+				@* <a class="navbar-brand btn BookButton" asp-area="" asp-controller="Books" asp-action="Create">Create a new book</a> *@
+				<form class="d-flex" role="search">
+					<input class="form-control me-2" type="search" value="@Model.Search" placeholder="Search" aria-label="Search" name="Search">
+					<button class="btn btn-outline-success" value="Search" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
+	</header>
+	<hr />
+	<p class="section_p">
+		Welcome to LivrariaOnline. Here you can buy all the books you want, but first you have to add that book :)
+	</p>
+</section>
 
-<body>
-	<div class="card-group flex-container">
-		@foreach (Book book in Model.Books)
-		{
-			<a style="color: black; text-decoration: none;" asp-controller="Home" asp-action="BookDetails" asp-route-id="@book.Id">
-				<div class="card BookCard flex-item" style="border: 1px solid rgba(0,0,0,.125);">
-					<img src="@book.CoverImageUrl" class="card-img-top bookCover">
+	<body>
+		<h2>Here we have some books we think you will like</h2>
+		<hr />
+		<div class="card-group flex-container">
+			@foreach (Book book in Model.Books)
+			{
+				<a style="color: black; text-decoration: none;" asp-controller="Home" asp-action="BookDetails" asp-route-id="@book.Id">
+					<div class="card BookCard flex-item" style="border: 1px solid rgba(0,0,0,.125);">
+						<img src="@book.CoverImageUrl" class="card-img-top bookCover">
 
-					<div class="card-body">
-						<h5 class="card-title">@book.Title</h5>
-						<p class="card-text">@book.Author</p>
-						<div class="d-inline-block">
-							@* <a class="btn BookButton align-self-center" asp-controller="Home" asp-action="BookDetails" asp-route-id="@book.Id">Details</a> *@
+						<div class="card-body">
+							<h5 class="card-title">@book.Title</h5>
+							<p class="card-text">@book.Author</p>
+							<div class="d-inline-block">
+								@* <a class="btn BookButton align-self-center" asp-controller="Home" asp-action="BookDetails" asp-route-id="@book.Id">Details</a> *@
+							</div>
+						</div>
+						<div class="card-footer">
+							<small class="text-body-secondary" style="align-self: flex-start">@book.Price &euro;</small>
 						</div>
 					</div>
-					<div class="card-footer">
-						<small class="text-body-secondary" style="align-self: flex-start">@book.Price &euro;</small>
-					</div>
-				</div>
-			</a>
-		}
-	</div>
-</body>
+				</a>
+			}
+		</div>
+	</body>

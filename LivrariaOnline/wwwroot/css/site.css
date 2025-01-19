@@ -27,7 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 70vh;
-    width: 350vh;
+    width: 350vh; /*resolver*/
 }
 
 #registercss {
@@ -54,6 +54,19 @@ body {
 }
 /* fim do css que diz respeito a parte do login */
 
+/* inicio do css que diz respeito a parte section na pasta index */
+#sectionindexcss {
+    background-color: black;
+    color: white; 
+    box-shadow: black 15px 15px;
+}
+
+.section_p {
+    padding-left: 17%;
+    right: 17%;
+}
+
+/* fim do css que diz respeito a parte section na pasta index */
 .col-md-8 {
     line-height: 10px;
 }
