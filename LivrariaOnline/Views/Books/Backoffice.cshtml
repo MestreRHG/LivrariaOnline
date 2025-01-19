@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Backoffice";
+}
+
+<div class="text-center">
+    <h2>Welcome to the Backoffice</h2>
+</div>
+
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand btn BookButton" asp-area="" asp-controller="Books" asp-action="Books">Books</a>
+            <a class="navbar-brand btn BookButton" asp-area="" asp-controller="Books" asp-action="Deliveries">Deliveries</a>
+        </div>
+    </nav>
+</header>

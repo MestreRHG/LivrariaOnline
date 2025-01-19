@@ -1,0 +1,38 @@
+﻿@model LivrariaOnline.ViewModels.DeliveriesViewModel
+@{
+    ViewData["Title"] = "Deliveries";
+}
+
+<div class="text-center">
+	<h2>Deliveries Details</h2>
+</div>
+
+<body>
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+				<th scope="col">Book's Cover</th>
+                <th scope="col">Book's Title</th>
+                <th scope="col">Username</th>
+                <th scope="col">Address</th>
+                <th scope="col">Arrived</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var delivery in Model.Deliveries)
+            {
+                <tr>
+                    <th scope="row">@delivery.Id</th>
+                    <td><img style="max-height: 3rem;" src="@delivery.BookBought.CoverImageUrl" /></td>
+                    <td>@delivery.BookBought.Title</td>
+                    <td>@delivery.UserName</td>
+                    <td>@delivery.Address</td>
+                    <td>
+                        <input type="checkbox" @(delivery.HasArrived ? "checked" : "") onchange="updateDeliveryStatus (@delivery.Id, this)" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

@@ -24,7 +24,7 @@ namespace LivrariaOnline.Controllers
             var books = _context.Books.AsQueryable();
             IndexViewModel model = new IndexViewModel
             {
-                Books = books.ToList(),
+                Books = books.Where(b => b.IsAvailable).ToList(),
                 Search = search ?? String.Empty
             };
 
@@ -41,6 +41,46 @@ namespace LivrariaOnline.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult CreateDelivery(int bookBoughtId)
+        {
+            ViewData["Title"] = "Create a Delivery";
+            var deliveryModel = new EditDeliveryViewModel { BookBought = bookBoughtId };
+            return View("EditDelivery", deliveryModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateDelivery(EditDeliveryViewModel editDeliveryViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Book bookBought = _context.Books.FirstOrDefault(b => b.Id == editDeliveryViewModel.BookBought);
+
+                var delivery = new Deliveries
+                {
+                    BookBought = bookBought,
+                    UserName = editDeliveryViewModel.UserName,
+                    Address = editDeliveryViewModel.Address,
+                    HasArrived = false
+                };
+
+                _context.Deliveries.Add(delivery);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            // Log the model state errors to the console
+            foreach (var state in ModelState)
+            {
+                foreach (var error in state.Value.Errors)
+                {
+                    _logger.LogError($"Property: {state.Key}, Error: {error.ErrorMessage}");
+                }
+            }
+
+            return View("EditDelivery", editDeliveryViewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
