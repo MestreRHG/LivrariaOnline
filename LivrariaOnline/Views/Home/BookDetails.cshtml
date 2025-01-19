@@ -20,6 +20,6 @@
         <p>@Model.Dimensions</p>
         <p>@Model.Price &euro;</p>
         <br />
-        <a class="btn BookButton" asp-area="" asp-controller="Books" asp-action="CreateDelivery">Buy</a>
+        <a class="btn BookButton" asp-area="" asp-controller="Home" asp-action="CreateDelivery" asp-route-bookBoughtId="@Model.Id">Buy</a>
     </div>
 </div>

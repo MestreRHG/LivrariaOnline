@@ -8,15 +8,14 @@ namespace LivrariaOnline.Models
         public int Id { get; set; }
 
         [Required]
-        public int BookId { get; set; }
+        public required Book BookBought { get; set; }
 
-        [Required] 
+        [Required(ErrorMessage = "Username is required")] 
         public required string UserName{ get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Address is required")]
         public required string Address { get; set; }
 
-        [Required]
-        public bool HasArrived { get; set; }
+        public bool HasArrived { get; set; } = false;
     }
 }

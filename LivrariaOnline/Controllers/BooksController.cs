@@ -4,6 +4,7 @@ using LivrariaOnline.Models;
 using LivrariaOnline.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 
@@ -53,7 +54,7 @@ public class BooksController : Controller
             _context.Books.Update(book);
             _context.SaveChanges();
 
-            return RedirectToAction("Backoffice");
+            return RedirectToAction("Books");
         }
 
         return View("BookEdit", book);
@@ -74,7 +75,7 @@ public class BooksController : Controller
             _context.Books.Add(book);
             _context.SaveChanges();
 
-            return RedirectToAction("Backoffice");
+            return RedirectToAction("Books");
         }
 
         // Log the model state errors to the console
@@ -98,7 +99,20 @@ public class BooksController : Controller
             _context.SaveChanges();
         }
 
-		return RedirectToAction("Backoffice");
+		return RedirectToAction("Books");
+    }
+
+    public IActionResult Deliveries()
+    {
+        //var deliveries = _context.Deliveries.ToList();
+
+        var deliveriesViewModel = new DeliveriesViewModel
+        {
+            Deliveries = _context.Deliveries.Include(d => d.BookBought).ToList()
+
+        };
+
+        return View(deliveriesViewModel);
     }
 }
 
