@@ -22,10 +22,9 @@ namespace LivrariaOnline.Controllers
         {
             // Get all books
             var books = _context.Books.AsQueryable();
-            IndexViewModel model = new IndexViewModel
-            {
-                Books = books.Where(b => b.IsAvailable).ToList(),
-                Search = search ?? String.Empty
+            var model = new IndexViewModel {
+                Search = search ?? String.Empty,
+                Books = books.Where(b => b.IsAvailable && b.Title.Contains(search ?? String.Empty)).ToList()
             };
 
             return View(model);
