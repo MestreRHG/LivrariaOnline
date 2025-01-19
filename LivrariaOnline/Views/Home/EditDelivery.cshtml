@@ -4,6 +4,15 @@
 }
 
 <div class="text-center">
+
+    <div>
+        <img src="@Model.BookCover"/>
+        <h3>@Model.BookTitle</h3>
+        <p>@Model.BookPrice &euro;</p>
+    </div>
+
+
+
     @using (Html.BeginForm("CreateDelivery", "Home", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
@@ -32,7 +41,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Purchase" class="btn btn-default" />
+                    <input type="submit" value="Finish" class="btn btn-default" />
                 </div>
             </div>
         </div>
