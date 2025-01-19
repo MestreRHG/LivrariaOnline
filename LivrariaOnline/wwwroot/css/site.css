@@ -23,20 +23,17 @@ body {
 
 /* inicio do css que diz respeito a parte do register */
 .maindivregister {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 70vh;
-    width: 350vh; /*resolver*/
 }
 
 #registercss {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-#registertitle {
+#registertitle {   /*está parte é necessario??*/
     font-family: 'Georgia', serif;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -54,10 +51,46 @@ body {
 }
 /* fim do css que diz respeito a parte do login */
 
+/* inicio do css que diz respeito a parte do _layout.cshtml */
+#footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-top footer text-muted{
+    background-color: white;
+}
+
+#div_footer {
+    color: aqua;
+    text-decoration: none;
+}
+/* fim do css que diz respeito a parte do _layout.cshtml */
+
+/* inicio do css que diz respeito a parte do backoffice */
+#a_div {
+    margin-left: 35%;
+    padding: 10px 130px;
+    background-color:darkblue ;
+}
+
+#a2_div {
+    margin-right: 27%;
+    background-color: blue; /*perguntar a alguém como posso melhorar a estetica aqui*/
+}
+/* fim do css que diz respeito a parte do backoffice */
+
 /* inicio do css que diz respeito a parte section na pasta index */
+#h2_div {
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5); /* sombra preta com desfoque */
+}
+
 #sectionindexcss {
     background-color: black;
-    color: white; 
+    color: white;
     box-shadow: black 15px 15px;
 }
 
@@ -66,6 +99,21 @@ body {
     right: 17%;
 }
 
+#h2_body {
+    display: flex;
+    justify-content: center; /*alinhar o conteudo na horizontal*/
+    align-items: center; /*alinhar o conteudo na vertical*/
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+#div_card {
+    transition: transform 0.4s ease; /* dá uma animação suave */
+}
+
+#div_card:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da div */
+}
 /* fim do css que diz respeito a parte section na pasta index */
 .col-md-8 {
     line-height: 10px;
