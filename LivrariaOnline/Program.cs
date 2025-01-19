@@ -21,6 +21,8 @@ namespace LivrariaOnline
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddControllers();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -39,6 +41,7 @@ namespace LivrariaOnline
             app.UseStaticFiles();
 
             app.UseRouting();
+
 
             app.UseAuthorization();
 

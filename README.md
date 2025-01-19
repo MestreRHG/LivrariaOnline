@@ -3,6 +3,10 @@
 ## What is it
 This a school work made with [TLT](https://github.com/TLT99 "TLT's Github Page"). It's purpose is showing that we know how to use MVC (Model View Controller), docker, git and Jenkins.
 
+## Using
+### API
+By adding /api/books at the end, you get a list of all the books
+
 ## Running
 There are two ways to run the app.
 

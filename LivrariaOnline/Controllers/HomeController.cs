@@ -44,8 +44,16 @@ namespace LivrariaOnline.Controllers
 
         public IActionResult CreateDelivery(int bookBoughtId)
         {
+            var bookBought = _context.Books.FirstOrDefault(b => b.Id == bookBoughtId);
+
             ViewData["Title"] = "Create a Delivery";
-            var deliveryModel = new EditDeliveryViewModel { BookBought = bookBoughtId };
+            var deliveryModel = new EditDeliveryViewModel { 
+                BookBought = bookBought.Id, 
+                BookCover = bookBought.CoverImageUrl, 
+                BookTitle = bookBought.Title, 
+                BookPrice = bookBought.Price 
+            };
+
             return View("EditDelivery", deliveryModel);
         }
 
