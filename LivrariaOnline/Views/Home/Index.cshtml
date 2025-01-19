@@ -10,7 +10,6 @@
 <header>
 	<nav class="navbar bg-body-tertiary">
 		<div class="container-fluid">
-			@* <a class="navbar-brand btn BookButton" asp-area="" asp-controller="Books" asp-action="Create">Create a new book</a> *@
 			<form class="d-flex" role="search">
 				<input class="form-control me-2" type="search" value="@Model.Search" placeholder="Search" aria-label="Search" name="Search">
 				<button class="btn btn-outline-success" value="Search" type="submit">Search</button>
@@ -30,9 +29,6 @@
 					<div class="card-body">
 						<h5 class="card-title">@book.Title</h5>
 						<p class="card-text">@book.Author</p>
-						<div class="d-inline-block">
-							@* <a class="btn BookButton align-self-center" asp-controller="Home" asp-action="BookDetails" asp-route-id="@book.Id">Details</a> *@
-						</div>
 					</div>
 					<div class="card-footer">
 						<small class="text-body-secondary" style="align-self: flex-start">@book.Price &euro;</small>
