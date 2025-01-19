@@ -134,13 +134,16 @@ body {
     height: 100%;
 }
 
-.BookButtons {
+.BookButtons {                         /*isto está aqui a fazer o que??*/
     display: flex;
     justify-content: space-between;
 }
 
 .BookButton {
-    border: 1px solid rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-color: blue;
+    background-color: indigo;
+    color: white;
 }
 
 .flex-container {
