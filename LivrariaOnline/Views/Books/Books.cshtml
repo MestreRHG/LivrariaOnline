@@ -51,7 +51,7 @@
                         <td>@book.Language</td>
                         <td>@book.Dimensions</td>
                         <td style="min-width: 5rem">@book.Price &euro;</td>
-                        <td>@Html.CheckBox("IsChecked", isChecked: book.IsAvailable, new { @disabled = "disabled" })</td>
+                        <td id="custom-checkbox">@Html.CheckBox("IsChecked", isChecked: book.IsAvailable, new { @disabled = "disabled" })</td> @* e se tentarmos colocar uma imagem aqui visto que a imagem não faz nada *@
                         <td><a class="btn BookButton" asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id">Edit</a></td>
                         <td><a class="btn BookButton" asp-controller="Books" asp-action="Delete" asp-route-id="@book.Id">Delete</a></td>
                     </tr>

@@ -83,6 +83,16 @@ body {
 }
 /* fim do css que diz respeito a parte do backoffice */
 
+/* inicio do css que diz respeito a parte do bookedit.cshtml */
+.form-group {
+    margin-top: 30px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço horizontalmente */
+    gap: 50px; /* Espaçamento entre os itens */
+}
+/* fim do css que diz respeito a parte do bookedit.cshtml */
+
 /* inicio do css que diz respeito a parte section na pasta index */
 #h2_div {
     text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5); /* sombra preta com desfoque */
