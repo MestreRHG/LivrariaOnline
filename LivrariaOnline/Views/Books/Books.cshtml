@@ -47,11 +47,11 @@
                         <td>@book.Author</td>
                         <td>@book.Editor</td>
                         <td>@book.Genre</td>
-                    <td style="min-width: 5rem">@book.ISBN</td>
+                        <td style="min-width: 5rem">@book.ISBN</td>
                         <td>@book.Language</td>
                         <td>@book.Dimensions</td>
                         <td style="min-width: 5rem">@book.Price &euro;</td>
-                        <td id="custom-checkbox">@Html.CheckBox("IsChecked", isChecked: book.IsAvailable, new { @disabled = "disabled" })</td> @* e se tentarmos colocar uma imagem aqui visto que a imagem não faz nada *@
+                        <td class="custom-checkbox">@Html.CheckBox("IsChecked", isChecked: book.IsAvailable, new { @disabled = "disabled", @style = "scale: 1.5;" })</td>
                         <td><a class="btn BookButton" asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id">Edit</a></td>
                         <td><a class="btn BookButton" asp-controller="Books" asp-action="Delete" asp-route-id="@book.Id">Delete</a></td>
                     </tr>

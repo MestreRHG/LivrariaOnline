@@ -7,10 +7,11 @@
 </div>
 
 <header>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="btn btn-secondary float-start" asp-area="" asp-controller="Books" asp-action="Books" id="a_div">Books</a>
-            <a class="btn btn-secondary float-end" asp-area="" asp-controller="Books" asp-action="Deliveries" id="a2_div">Deliveries</a> @* chatice aqui. como posso melhorar a estetica *@
+    <div class="bg-body-tertiary align-content-center">
+        @* <div class="container-fluid"> *@
+        <div class="d-flex flex-column align-items-center ">
+            <a class="btn btn-secondary mb-2" asp-area="" asp-controller="Books" asp-action="Books" id="a_div">Books</a>
+            <a class="btn btn-secondary float-end" asp-area="" asp-controller="Books" asp-action="Deliveries" id="a_div">Deliveries</a> 
         </div>
-    </nav>
+    </div>
 </header>

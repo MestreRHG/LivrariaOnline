@@ -22,9 +22,6 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
                         @if (User.Identity != null && User.Identity.IsAuthenticated) {
                             <li class="nav-item">
                                 <a class="nav-link text-dark guestHiddenButton" asp-area="" asp-controller="Books" asp-action="Backoffice">Backoffice</a>
@@ -42,9 +39,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container" id="footer">
-            &copy; 2025 - LivrariaOnline - <a id="div_footer" asp-area="" asp-controller="Home" asp-action="Privacy">Todos os direitos reservados.</a>
+    <footer class="border-top footer" id="footer">
+        <div class="container">
+            &copy; 2025 - LivrariaOnline
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
