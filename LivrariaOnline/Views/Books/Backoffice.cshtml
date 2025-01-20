@@ -9,9 +9,15 @@
 <header>
     <div class="bg-body-tertiary align-content-center">
         @* <div class="container-fluid"> *@
-        <div class="d-flex flex-column align-items-center ">
-            <a class="btn btn-secondary d-flex mb-2" asp-area="" asp-controller="Books" asp-action="Books" id="a_div"><p style="margin:0;">Books</p></a>
-            <a class="btn btn-secondary d-flex float-end" asp-area="" asp-controller="Books" asp-action="Deliveries" id="a_div">Deliveries</a>
+        <div @* class="d-flex flex-column align-items-center" *@ style="display: flex;">
+            <div style="width: 50%; padding: 20px;  margin-top: 21px; display: flex; flex-direction: column; align-items: center">
+                <i class="fa-duotone fa-solid fa-book" style=" transform: scale(1.9); margin-bottom: 1rem;;"></i>
+                <a class="btn btn-secondary @* d-flex justify-content-center align-items-center *@ width: 50%; text-align: center" asp-area="" asp-controller="Books" asp-action="Books" id="a_div"><p style="margin:0;">Books</p></a>
+            </div>
+            <div style="width: 50%; padding: 20px; margin-top: 21px; display: flex; flex-direction: column; align-items: center;">
+                <i class="fa-duotone fa-solid fa-truck" style=" transform: scale(1.9); margin-bottom: 1rem;"></i>
+                <a class="btn btn-secondary" style="width: 50%; text-align: center;" asp-area="" asp-controller="Books" asp-action="Deliveries" id="a_div">Deliveries</a>
+            </div>
         </div>
     </div>
 </header>

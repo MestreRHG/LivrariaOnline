@@ -73,10 +73,17 @@ body {
 /* inicio do css que diz respeito a parte do backoffice */
 #a_div {
     margin: 1rem;
+    margin-top: 3rem;
     padding: 10px 130px;
     background-color: blue;
     width: 20rem;
     flex-direction: column;
+}
+
+.fa-duotone fa-solid fa-book {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 /* fim do css que diz respeito a parte do backoffice */
 
