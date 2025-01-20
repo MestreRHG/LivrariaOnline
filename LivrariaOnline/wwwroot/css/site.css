@@ -33,7 +33,7 @@ body {
     width: 100%;
 }
 
-#registertitle {   /*está parte é necessario??*/
+#registertitle {
     font-family: 'Georgia', serif;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -74,8 +74,9 @@ body {
 #a_div {
     margin: 1rem;
     padding: 10px 130px;
-    background-color:darkblue;
-    width: 10rem;
+    background-color: blue;
+    width: 20rem;
+    flex-direction: column;
 }
 /* fim do css que diz respeito a parte do backoffice */
 

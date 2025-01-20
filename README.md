@@ -5,7 +5,17 @@ This a school work made with [TLT](https://github.com/TLT99 "TLT's Github Page")
 
 ## Using
 ### API
-By adding /api/books at the end, you get a list of all the books
+You can test the API by using the curl command
+#### List of All Books: 
+```
+curl -X GET https://localhost:44301/api/books
+```
+#### List of All Books: 
+```
+curl -X POST "https://localhost:44301/api/makedelivery?bookId=2&userName=John%20Doe&address=123%20Main%20St" -H "Content-Type: application/json" -d "{}"
+```
+
+NOTE: Remember to change the localhost:44301 to your applications' address, or, if it is on localhost, you will probably still need to change the port.
 
 ## Running
 There are two ways to run the app.
