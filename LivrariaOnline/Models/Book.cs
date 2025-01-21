@@ -39,6 +39,7 @@ namespace LivrariaOnline.Models
         public required string Dimensions { get; set; }
 
         [DataType(DataType.ImageUrl, ErrorMessage = "Should be an URL to the image")]
+        [Display(Name = "Cover Image URL")]
         public string? CoverImageUrl { get; set; }
 
         [Required(ErrorMessage = "The price is required.")]

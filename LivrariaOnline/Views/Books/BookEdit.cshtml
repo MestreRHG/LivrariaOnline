@@ -1,109 +1,148 @@
 ﻿@model LivrariaOnline.Models.Book
 
-<div class="text-center">
-	<h2>Book Details</h2>
+<div class="container">
+    <h2>Book Details</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
 
-    @using (Html.BeginForm(FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
+            @using (Html.BeginForm(FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-horizontal">
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Editor, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Editor, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Editor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Language, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Language, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Language, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.CoverImageUrl, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CoverImageUrl, new { htmlAttributes = new { @class = "form-control", id = "coverImageUrl" } })
+                            @Html.ValidationMessageFor(model => model.CoverImageUrl, "", new { @class = "text-danger" })
+                        </div>
+                    </div> 
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Dimensions, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Dimensions, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Dimensions, "", new { @class = "text-danger" })
+                        </div>
+                    </div> 
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number", step = "0.01", min = "0.01" })
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        @Html.LabelFor(model => model.IsAvailable, htmlAttributes: new { @class = "control-label col-md-2 align-self-center lh-1" })
+                        <div class="col-md-10">
+                            @Html.CheckBoxFor(model => model.IsAvailable)
+                            @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group align-items-center">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Editor, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Editor, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Editor, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Language, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Language, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Language, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CoverImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CoverImageUrl, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CoverImageUrl, "", new { @class = "text-danger" })
-                </div>
-            </div> 
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Dimensions, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Dimensions, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Dimensions, "", new { @class = "text-danger" })
-                </div>
-            </div> 
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number", step = "0.01", min = "0.01" })
-                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.IsAvailable, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.CheckBoxFor(model => model.IsAvailable)
-                    @Html.ValidationMessageFor(model => model.IsAvailable, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-            </div>
-        }
+            }
+        </div>
+        <div class="col-md-4 align-content-center">
+            @if (Model?.CoverImageUrl == null)
+            {
+                <img id="bookCoverImage" src="" alt="Book Cover" width="450" style="display: none; align-items: center;" />
+            } else
+            {
+                <img id="bookCoverImage" src="@Model.CoverImageUrl" alt="Book Cover" width="450" style="align-items: center; padding-right: 4rem;" />
+            }
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        document.getElementById('coverImageUrl').addEventListener('input', function() {
+            var imageUrl = this.value;
+            checkImage(imageUrl, function(isValid) {
+                if (isValid) {
+                    document.getElementById('bookCoverImage').src = imageUrl;
+                    document.getElementById('bookCoverImage').style.display = 'block';
+                } else {
+                    document.getElementById('bookCoverImage').src = '';
+                    document.getElementById('bookCoverImage').style.display = 'none';
+                }
+            });
+        });
+
+        function checkImage(url, callback) {
+            var img = new Image();
+            img.onload = function() { callback(true); };
+            img.onerror = function() { callback(false); };
+            img.src = url;
+        }
+    </script>
+
+}
