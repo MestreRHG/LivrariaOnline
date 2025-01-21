@@ -23,7 +23,20 @@ body {
 
 /* inicio do css que diz respeito a parte do register */
 .maindivregister {
-    height: 70vh;
+    height: 80vh;
+    /*width: 300px;*/ /*adicionei isto aqui*/
+    /*background-image: url(https://images.impresa.pt/sicnot/2021-04-23-Livros.jpg-ffa1e360/original);
+    background-size: cover;  Ajusta a imagem para caber sem cortar 
+    background-repeat: no-repeat;
+    background-position: center;  Centraliza a imagem 
+    background-color: rgba(0, 0, 0, 0.5);  transparência (0.0 a 1.0);*/
+/*  border: 2px solid blue;
+    border-radius: 10px;*/
+}
+.background {
+    background-image: url(https://images.impresa.pt/sicnot/2021-04-23-Livros.jpg-ffa1e360/original);
+    background-size: cover;
+    /*background-color: rgba(0, 0, 0, 1.0);*/ /*transparência (0.0 a 1.0);*/
 }
 
 #registercss {
@@ -37,6 +50,7 @@ body {
     font-family: 'Georgia', serif;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-shadow: 4px 4px 9px rgba(0, 0, 0, 0.5);
 }
 
 /* fim do css que diz respeito a parte do register */
