@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  margin-bottom: 16rem;
+    margin-bottom: 16rem;
 }
 
 /* inicio do css que diz respeito a parte do register */
@@ -82,6 +82,7 @@ body {
     color: aqua;
     text-decoration: none;
 }
+
 /* fim do css que diz respeito a parte do _layout.cshtml */
 
 /* inicio do css que diz respeito a parte do backoffice */
@@ -221,3 +222,7 @@ body {
 #backToTop:hover {
     background-color: #1b62b0; 
 }
+/*#nav_button{
+    background-color: dimgrey;
+}*/
+
