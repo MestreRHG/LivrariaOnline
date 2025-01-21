@@ -47,6 +47,7 @@ public class BooksController : Controller
 
     // Function to save or edit the book
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Edit(Book book)
     {
         if (ModelState.IsValid)
