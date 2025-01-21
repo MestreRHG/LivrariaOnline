@@ -17,10 +17,6 @@ html {
   min-height: 100%;
 }
 
-body {
-    margin-bottom: 16rem;
-}
-
 /* inicio do css que diz respeito a parte do register */
 .maindivregister {
     height: 80vh;
@@ -34,10 +30,23 @@ body {
     border-radius: 10px;*/
 }
 .background {
-    background-image: url(https://images.impresa.pt/sicnot/2021-04-23-Livros.jpg-ffa1e360/original);
-    background-size: cover;
-    /*background-color: rgba(0, 0, 0, 1.0);*/ /*transparência (0.0 a 1.0);*/
+    position: relative;
+    z-index: 1;
 }
+
+    .background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://images.impresa.pt/sicnot/2021-04-23-Livros.jpg-ffa1e360/original);
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8; /* Adjust the opacity value as needed */
+        z-index: -1;
+    }
 
 #registercss {
     display: flex;
@@ -51,6 +60,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     text-shadow: 4px 4px 9px rgba(0, 0, 0, 0.5);
+    font-size: 5rem;
 }
 
 /* fim do css que diz respeito a parte do register */
