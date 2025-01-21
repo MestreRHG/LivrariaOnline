@@ -83,6 +83,15 @@ body {
     text-decoration: none;
 }
 
+.header{
+    border-bottom: 2px solid blue;
+    margin-bottom: 10px;
+}
+
+.div_container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os itens */
+}
 /* fim do css que diz respeito a parte do _layout.cshtml */
 
 /* inicio do css que diz respeito a parte do backoffice */

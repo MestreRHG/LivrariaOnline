@@ -12,19 +12,25 @@
 </head>
 <body>
     <button id="backToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <header class ="ul_css">
-        <nav class="nav_css"> @* EU PAREI AQUI!!! *@
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LivrariaOnline</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+    <header class ="header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/img1.png" width="50" height="40">
+                </a>
+            </div>
+            <div class="div_container">
+                @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LivrariaOnline</a> *@
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         @if (User.Identity != null && User.Identity.IsAuthenticated) {
                             <li class="nav-item">
-                                <a class="nav-link text-dark guestHiddenButton" asp-area="" asp-controller="Books" asp-action="Backoffice">Backoffice</a>
+                                <a class="nav-link active" asp-area="" asp-controller="Books" asp-action="Backoffice">Backoffice</a>
                             </li>
                         }
                     </ul>
