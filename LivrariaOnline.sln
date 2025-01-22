@@ -9,7 +9,7 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{488737E0-1795-4C0C-A567-DF1F6054AAD0}"
 	ProjectSection(SolutionItems) = preProject
-		Jenkinsfile.txt = Jenkinsfile.txt
+		Jenkinsfile = Jenkinsfile
 		README.md = README.md
 	EndProjectSection
 EndProject
