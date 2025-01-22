@@ -7,12 +7,14 @@ pipeline
 
     stages 
     {
+        // Checkout the code
         stage('Checkout Stage') {
             steps {
                 git url: 'https://github.com/MestreRHG/LivrariaOnline.git', branch: 'master'
             }
         }
         
+        // Build the application
         stage('Build Stage')  
         {
             steps 
@@ -21,11 +23,11 @@ pipeline
             }
         }
         
+        // Deploy application on IIS
         stage('Deploy Stage')
         {
             steps
             {
-            //Deploy application on IIS
             bat 'net stop "w3svc"'
             bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package="%WORKSPACE%\\LivrariaOnline\\bin\\Release\\net8.0\\LivrariaOnline.zip" -dest:auto -setParam:"IIS Web Application Name"="LivrariaOnline" -skip:objectName=filePath,absolutePath=".\\\\PackagDemotap\\\\Web.config$" -enableRule:DoNotDelete -allowUntrusted=true'
             bat 'net start "w3svc"'

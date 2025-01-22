@@ -8,6 +8,7 @@ namespace LivrariaOnline.ViewModels
         public int BookBought { get; set; }
 
         [Required(ErrorMessage = "Username is required")]
+        [Display(Name = "Username")]
         public string? UserName { get; set; }
 
         [Required(ErrorMessage = "Address is required")]

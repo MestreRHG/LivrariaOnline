@@ -22,19 +22,26 @@ There are two ways to run the app.
 
 ### 1. Docker Compose
 You need:
-* Visual Studio 2022 (with the ASP.NET component)
 * Docker
 
-To execute, all you need to do is open with Visual Studio, make sure "Docker-Compose" is selected, and run. It will then create the two containers and volume needed to run the sql server and website.
+To execute, all you need to do is run the following command:
+```
+# To run (add -d to run in the background)
+docker-compose up
+
+# To stop
+docker-compose down
+```
 
 ### 2. IIS
 You need:
 * IIS
+* Docker
 * Jenkins
 
-(WIP, needs info)
+Open the IIS Management application, and create a website with the name "LivrariaOnline" and the physical path to the "LivrariaOnline" folder.<br />
+Then, open Jenkins and create a pipeline. On the advanced settings, set the pipeline script to the Jenkinsfile through the git repository. Alternatively, you can copy the content of the Jenkinsfile to the pipeline script. <br/>
+Then, run the pipeline.
 
 #### Development Notes (to be removed)
-Put in jenkinsfile
 docker-compose up SqlServerDB
-dotnet build -c $configuration /p:DefineConstants="IIS"

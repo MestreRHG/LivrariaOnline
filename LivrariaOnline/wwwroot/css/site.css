@@ -20,7 +20,7 @@ html {
 /* inicio do css que diz respeito a parte do register */
 .maindivregister {
     height: 80vh;
-    /*width: 300px;*/ /*adicionei isto aqui*/
+    /*width: 300px;*/
     /*background-image: url(https://images.impresa.pt/sicnot/2021-04-23-Livros.jpg-ffa1e360/original);
     background-size: cover;  Ajusta a imagem para caber sem cortar 
     background-repeat: no-repeat;
@@ -34,19 +34,19 @@ html {
     z-index: 1;
 }
 
-    .background::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url(https://images.impresa.pt/sicnot/2021-04-23-Livros.jpg-ffa1e360/original);
-        background-size: cover;
-        background-position: center;
-        opacity: 0.8; /* Adjust the opacity value as needed */
-        z-index: -1;
-    }
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://images.impresa.pt/sicnot/2021-04-23-Livros.jpg-ffa1e360/original);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: -1;
+}
 
 #registercss {
     display: flex;
@@ -100,7 +100,7 @@ html {
 
 .div_container {
     display: flex;
-    gap: 10px; /* Espaçamento entre os itens */
+    gap: 10px;
 }
 /* fim do css que diz respeito a parte do _layout.cshtml */
 
@@ -126,8 +126,8 @@ html {
     margin-top: 30px;
     width: 40%;
     display: flex;
-    justify-content: space-between; /* Distribui o espaço horizontalmente */
-    gap: 50px; /* Espaçamento entre os itens */
+    justify-content: space-between;
+    gap: 50px;
 }
 
 .create {
@@ -144,13 +144,12 @@ html {
 
 /* inicio do css que diz respeito a parte section na pasta index */
 #h2_div {
-    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5); /* sombra preta com desfoque */
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.5);
 }
 
 #sectionindexcss {
     background-color: rgb(0, 109, 173);
     color: white;
-    /*box-shadow: black 15px 15px;*/
     padding: 0.5rem;
 }
 
@@ -161,19 +160,20 @@ html {
 
 #h2_body {
     display: flex;
-    justify-content: center; /*alinhar o conteudo na horizontal*/
-    align-items: center; /*alinhar o conteudo na vertical*/
+    justify-content: center;
+    align-items: center;
     padding-bottom: 30px;
     padding-top: 20px;
 }
 
 #div_card {
-    transition: transform 0.4s ease; /* dá uma animação suave */
+    transition: transform 0.4s ease;
 }
 
 #div_card:hover {
-    transform: scale(1.1); /* Aumenta o tamanho da div */
+    transform: scale(1.1);
 }
+
 /* fim do css que diz respeito a parte section na pasta index */
 .col-md-8 {
     line-height: 10px;
@@ -222,7 +222,7 @@ html {
 }
 
 .flex-item {
-    flex: 1 1 calc(33.333% - 32px); /* 3 items per row, minus the gap */
+    flex: 1 1 calc(33.333% - 32px);
     box-sizing: border-box;
     text-align: center;
     border-radius: 8px;
@@ -252,7 +252,3 @@ html {
 #backToTop:hover {
     background-color: #1b62b0; 
 }
-/*#nav_button{
-    background-color: dimgrey;
-}*/
-
