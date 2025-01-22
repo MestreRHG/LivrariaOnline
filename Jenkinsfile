@@ -27,7 +27,7 @@ pipeline
             {
             //Deploy application on IIS
             bat 'net stop "w3svc"'
-            bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package="%WORKSPACE%\\LivrariaOnline\\bin\\Release\\net8.0\\LivrariaOnline.zip" -dest:auto -setParam:"IIS Web Application Name"="JenkinsDemo" -skip:objectName=filePath,absolutePath=".\\\\PackagDemotap\\\\Web.config$" -enableRule:DoNotDelete -allowUntrusted=true'
+            bat '"C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3\\msdeploy.exe" -verb:sync -source:package="%WORKSPACE%\\LivrariaOnline\\bin\\Release\\net8.0\\LivrariaOnline.zip" -dest:auto -setParam:"IIS Web Application Name"="LivrariaOnline" -skip:objectName=filePath,absolutePath=".\\\\PackagDemotap\\\\Web.config$" -enableRule:DoNotDelete -allowUntrusted=true'
             bat 'net start "w3svc"'
 
             }
